@@ -1,0 +1,308 @@
+.main {
+  height: 100vh;
+  width: 100%;
+  background-color: #ece5fa;
+  overflow: hidden;
+  display: flex;
+}
+
+.uploadSection {
+  width: 300px;
+  padding: 10px 10px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  border-right: 2px solid #c2b7da;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 16px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #3f51b5;
+  outline: none;
+}
+
+button {
+  background-color: #b524ee;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #d793f3;
+  cursor: not-allowed;
+}
+
+.fileUploadBox {
+  margin-top: 10px;
+}
+
+.dropArea {
+  border: 2px dashed #b39ddb;
+  background: #f9f7ff;
+  border-radius: 16px;
+  padding: 7px 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  position: relative;
+}
+
+.dropArea:hover {
+  border-color: #673ab7;
+}
+
+.uploadIcon {
+  margin-bottom: 14px;
+  color: #888;
+}
+
+.uploadPrompt {
+  color: #666;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: block;
+}
+
+#uploadIcon {
+  color: #3b1e54;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.select{
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.trash{
+  color: rgb(229, 3, 3);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(254, 236, 236);
+  height: 40px;
+  width: 40px;
+  border-radius: 7px;
+}
+.icon{
+  color: rgb(146, 0, 153);
+  font-size: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(248, 198, 255);
+  height: 40px;
+  width: 40px;
+  border-radius: 7px;
+}
+
+.tabletext:hover{
+  color: #b524ee;
+  cursor: pointer;
+}
+
+.document {
+  width: 100%;
+  height: auto; /* full viewport height for vertical centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book_frame {
+  height: 100%;
+}
+
+.book {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+}
+
+.flipbook {
+  width: 900px !important;
+  height: 600px !important;
+  transition: width 0.4s ease;
+  perspective: 0;
+  margin: 0 auto;
+}
+
+.demoPage {
+  background: #fff;
+  border-radius: 8px;
+  position: relative; /* allow shadow pseudo elements */
+  /* padding: 0; */
+
+  /* padding: 8px; */
+  /* overflow: hidden; */
+}
+
+.blankcontainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blank {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ccb4f5;
+}
+
+.demoPage:nth-child(even)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 18px; /* width of shadow */
+  height: 600px;
+  pointer-events: none;
+  box-shadow: inset -12px 0 18px -8px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+
+/* Inner shadow on the left edge of right pages (odd pages) */
+.demoPage:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 600px;
+  pointer-events: none;
+  box-shadow: inset 12px 0 18px -8px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+
+.demoPage canvas {
+  width: 450px !important;
+  height: 600px !important;
+  display: block;
+  margin: 0 auto;
+}
+.pdf_file {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.img_file {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*Mobile View*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .uploadSection {
+  display: none;
+}
+  .smallcontainer {
+    overflow-y: auto;
+    height: 90vh;
+    padding: 10px;
+  }
+  .smallbox {
+    height: 100vh;
+    width: 90vw;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    perspective: 0;
+  }
+}
+/*Tablet view*/
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+   .uploadSection {
+  display: none;
+}
+  .smallcontainer {
+    overflow-y: auto;
+    height: 90vh;
+    padding: 10px;
+    /* box-sizing: border-box; */
+  }
+  .smallbox {
+    height: 100vh;
+    width: 90vw;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    perspective: 0;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+  .flipbook {
+    width: 600px;
+    height: 400px;
+    transition: width 0.4s ease;
+    perspective: 0;
+    margin: 0 auto;
+  }
+
+  .demoPage:nth-child(even)::after {
+    height: 100%;
+  }
+
+  .demoPage:nth-child(odd)::before {
+    height: 100%;
+  }
+
+  .pdf_file {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .img_file {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .demoPage canvas {
+    width: 600px !important;
+    height: 400px !important;
+    display: block;
+    margin: 0 auto;
+  }
+}

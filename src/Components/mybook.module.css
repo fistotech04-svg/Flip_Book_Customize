@@ -1,0 +1,180 @@
+.main {
+  height: 100vh;
+  width: 100%;
+  background-color: #ece5fa;
+  overflow: hidden;
+  display: flex;
+}
+.uploadSection {
+  width: 200px ;
+  padding: 10px 10px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  border-right: 2px solid #c2b7da;
+}
+
+.dropArea {
+  border: 2px dashed #b39ddb;
+  background: #f9f7ff;
+  border-radius: 16px;
+  padding: 10px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  position: relative;
+}
+
+.dropArea:hover {
+  border-color: #673ab7;
+}
+
+.uploadIcon {
+  margin-bottom: 14px;
+  color: #888;
+}
+
+.uploadPrompt {
+  color: #666;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: block;
+}
+.buttonRow {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.uploadInfo {
+  font-size: 0.92rem;
+  color: #383838;
+  /* margin-bottom: 22px; */
+}
+
+.nextBtn {
+  background: #e0e0e0;
+  color: #888;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  padding: 8px 32px;
+  font-weight: 500;
+  cursor: not-allowed;
+  box-shadow: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nextBtn:enabled {
+  background: #6c2ed9;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nextBtn:enabled:hover {
+  background: #512aa6;
+}
+
+#uploadIcon {
+  color: #3b1e54;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.readButton_diable{
+  margin-top: 10px;
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #d7c8f7;
+  color: white;
+  cursor: not-allowed;
+}
+
+.readButton{
+  margin-top: 10px;
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #6f37e6;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+.document {
+  width: 100%;
+  height: auto; /* full viewport height for vertical centering */
+  /* margin: 0 auto; */
+  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flipbook {
+  width: 900px !important;
+  height: 600px !important;
+  transition: width 0.4s ease;
+  perspective: 0;
+}
+
+.demoPage {
+  background: #fff;
+  border-radius: 8px;
+  position: relative; /* allow shadow pseudo elements */
+}
+
+.demoPage:nth-child(even)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 18px; /* width of shadow */
+  height: 600px;
+  pointer-events: none;
+  /* border-radius: 0 10px 8px 0; */
+  box-shadow: inset -12px 0 18px -8px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+
+/* Inner shadow on the left edge of right pages (odd pages) */
+.demoPage:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 600px;
+  pointer-events: none;
+  /* border-radius: 8px 0 0 8px; */
+  box-shadow: inset 12px 0 18px -8px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+
+/* Page wrapper */
+.demoPage {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background: #fff;
+  border-radius: 8px;
+}
+
+.demoPage canvas {
+  width: 450px !important;
+  height: 600px !important;
+  display: block;
+  margin: 0 auto;
+}
