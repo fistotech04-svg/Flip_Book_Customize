@@ -10,8 +10,9 @@ function App() {
     <>
     <Router>
       <Routes>
-        <Route path='/Flip_Book_Customize' element={<UploadPage/>}/>
-        <Route path='/Flip_Book_Customize/flipbook' element={<FlipbookPreview/>}/>
+        <Route path='/Flip_Book_Customize' element={<UploadPage/>}>
+          <Route path='flipbook' element={<FlipbookPreview/>}/>
+        </Route>
       </Routes>
     </Router>
     {/* <FlipbookSplit/> */}
