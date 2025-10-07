@@ -707,7 +707,7 @@ const UploadPageWithLiveFlipbookAndToc = () => {
     };
 
     sessionStorage.setItem("flipbookData", JSON.stringify(data));
-    window.open("/Flip_Book_Customize/flipbook", "_blank");
+    window.open("flipbook", "_blank");
   };
 
   // Inside your UploadPageWithLiveFlipbookAndToc component, add on top with other useState:
