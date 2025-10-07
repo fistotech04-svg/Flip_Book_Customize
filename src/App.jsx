@@ -5,10 +5,10 @@ import FlipbookPreview from './Components/FlipbookPreview'
 function App() {
   return (
     <>
-    <Router>
+    <Router basename="/Flip_Book_Customize">
       <Routes>
-        <Route path='/Flip_Book_Customize' element={<UploadPage/>}/>
-        <Route path='/Flip_Book_Customize/flipbook' element={<FlipbookPreview/>}/>
+        <Route path="/" element={<UploadPage />} />
+        <Route path="/flipbook" element={<FlipbookPreview />} />
       </Routes>
     </Router>
     {/* <FlipbookSplit/> */}
